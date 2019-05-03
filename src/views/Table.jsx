@@ -64,12 +64,16 @@ class CMSTable extends React.Component {
   state = {
     products: ["title", "price", "quantity", "createdBy", "updatedBy"],
     projects: ["title", "createdBy", "updatedBy"],
+    users: ["givenName"],
     selectedItems: [],
-    checked: false
+    checked: false,
+    routes: ['product', 'user', 'project'],
+    currentRoute: ''
   }
   componentWillMount(){
     this.props.fetchTableContent(this.props.match.params.table);
   }
+
   renderTableHeaders(){
     if(this.state[this.props.match.params.table] !== undefined){
       return this.state[this.props.match.params.table].map((header, i) => {
@@ -101,7 +105,7 @@ class CMSTable extends React.Component {
           <Link
             color="link"
             title=""
-            to={`/admin/cms/product/${row._id}`}
+            to={`/admin/cms/${this.props.match.params.table}/${row._id}`}
           >
             {row[header]}
           </Link></td>)

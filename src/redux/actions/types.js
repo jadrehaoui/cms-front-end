@@ -4,6 +4,7 @@ export const SOFT_DELETE_SELECTION = 'DELETE_SELECTION';
 export const RESTORE = 'RESTORE';
 export const UNPUBLISH = 'UNPUBLISH';
 export const PUBLISH = 'PUBLISH';
+export const GET_FORM = 'GET_FORM';
 
 export const CREATE_PRODUCT = 'CREATE_PRODUCT';
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';

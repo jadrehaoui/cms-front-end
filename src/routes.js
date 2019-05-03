@@ -5,7 +5,7 @@ import Notifications from "views/Notifications.jsx";
 import Rtl from "views/Rtl.jsx";
 import TableList from "views/TableList.jsx";
 import Typography from "views/Typography.jsx";
-import UserProfile from "views/UserProfile.jsx";
+import FormView from "views/FormView.jsx";
 import CMSTable from 'views/Table.jsx';
 var routes = [
   {
@@ -14,6 +14,15 @@ var routes = [
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
+    layout: "/admin"
+  },
+  {
+    path: "/cms/:table/:id",
+    name: "Form",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-chart-pie-36",
+    component: FormView,
+    redirect: true,
     layout: "/admin"
   },
   {
@@ -27,7 +36,7 @@ var routes = [
   },
   {
     path: "/icons",
-    name: "Icons",
+    name: "Components",
     rtlName: "الرموز",
     icon: "tim-icons icon-atom",
     component: Icons,
@@ -47,14 +56,6 @@ var routes = [
     rtlName: "إخطارات",
     icon: "tim-icons icon-bell-55",
     component: Notifications,
-    layout: "/admin"
-  },
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: "tim-icons icon-single-02",
-    component: UserProfile,
     layout: "/admin"
   },
   {
@@ -82,4 +83,13 @@ var routes = [
     layout: "/rtl"
   }
 ];
+
+// {
+//   path: "/user-profile",
+//   name: "User Profile",
+//   rtlName: "ملف تعريفي للمستخدم",
+//   icon: "tim-icons icon-single-02",
+//   component: UserProfile,
+//   layout: "/admin"
+// },
 export default routes;

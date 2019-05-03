@@ -5,6 +5,7 @@ import {
   RESTORE,
   UNPUBLISH,
   PUBLISH,
+  GET_FORM,
 
   CREATE_PRODUCT,
   FETCH_PRODUCTS,
@@ -44,6 +45,10 @@ export const publishItems = (tableName, array) => async dispatch => {
   var body = {userId: "5c2d0afa2bd4133f999ca43f", publish: array};
   const response = await server.put(`/products/publish`, body);
   dispatch({type: PUBLISH, payload: response.data});
+}
+export const fetchForm = (name) => async dispatch => {
+  const response = await server.post(`/form`, {userId: "5c2d0afa2bd4133f999ca43f", title: name});
+  dispatch({type: GET_FORM, payload: response.data});
 }
 
 // PRODUCT CRUD
